@@ -1,12 +1,14 @@
 import Dao.CardapioDao;
 import JPAUtil.JPAUtil;
-import Produto.Produto;
+import Produto.Cardapio;
 import jakarta.persistence.EntityManager;
 
-public class ProdutoTest {
+public class CardapioTest {
 
 	public static void main(String[] args) {
-		Produto cardapio = new Produto("Mussarela",30);
+		Cardapio cardapio = new Cardapio();
+		cardapio.setNome("Calabresa");
+		cardapio.setPreco(30);
 
 		EntityManager var = JPAUtil.getEntitymanager();
 		CardapioDao cardapioDao = new CardapioDao(var);

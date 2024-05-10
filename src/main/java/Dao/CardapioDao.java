@@ -1,6 +1,6 @@
 package Dao;
 
-import Produto.Produto;
+import Produto.Cardapio;
 import jakarta.persistence.EntityManager;
 
 public class CardapioDao {
@@ -9,7 +9,7 @@ public class CardapioDao {
 	public CardapioDao(EntityManager connection){
 		this.var = connection;
 	}
-	public void cadastrar(Produto value){
+	public void cadastrar(Cardapio value){
 		this.var.persist(value);
 	}
 }

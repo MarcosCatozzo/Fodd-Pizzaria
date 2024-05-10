@@ -4,16 +4,15 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="cardapio")
-public class Produto {
+public class Cardapio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private int preco;
 
-	public Produto(String nome, int preco){
-		this.nome = nome;
-		this.preco = preco;
+	public Cardapio(){
+
 	}
 
 	public int getId() {

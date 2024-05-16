@@ -2,11 +2,28 @@ import CadastroCliente.Cadastro;
 import Dao.CadastroDao;
 import JPAUtil.JPAUtil;
 import jakarta.persistence.EntityManager;
+import org.hibernate.event.spi.SaveOrUpdateEvent;
+
+import java.util.List;
 
 public class CadastroTest {
 
 	public static void main(String[] args) {
 
+		cadastroDeCliente();
+
+		EntityManager entityManager = JPAUtil.getEntitymanager();
+		CadastroDao cadastroDao = new CadastroDao(entityManager);
+
+		Cadastro p = cadastroDao.buscarPorId(16l);
+		System.out.println(p.getEndereco() + p.getNome());
+
+		List<Cadastro> todos = cadastroDao.buscarNomes();
+		todos.forEach(p1 -> System.out.println(p.getNome()));
+
+	}
+
+	private static void cadastroDeCliente() {
 		Cadastro cadastro = new Cadastro();
 		cadastro.setNome("MARTA");
 		cadastro.setTelefone("1111-1111");
@@ -34,6 +51,5 @@ public class CadastroTest {
 		cadastroDao1.cadastrar(cadastro1);
 		entityManager1.getTransaction().commit();
 		entityManager1.close();
-
 	}
 }

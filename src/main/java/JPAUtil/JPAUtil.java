@@ -9,7 +9,7 @@ public class JPAUtil {
 	private static final EntityManagerFactory FACTORY = Persistence
 			.createEntityManagerFactory("pizzaria");
 
-	public static EntityManager getEntitymanager(){
+	public static EntityManager getEntitymanager() {
 		return FACTORY.createEntityManager();
 	}
 }

@@ -1,27 +1,28 @@
-package Produto;
+package Produtos;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="cardapio")
-public class Produto {
+@Table(name="produtos")
+public class Produtos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	@Column(name = "id")
+	private int Id;
 	private String nome;
 	private int preco;
 
-	public Produto(String nome, int preco){
+	public Produtos(String nome, int preco){
 		this.nome = nome;
 		this.preco = preco;
 	}
 
 	public int getId() {
-		return id;
+		return Id;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		Id = id;
 	}
 
 	public String getNome() {

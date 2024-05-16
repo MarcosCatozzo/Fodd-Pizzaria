@@ -4,13 +4,19 @@ import CadastroCliente.Cadastro;
 import jakarta.persistence.EntityManager;
 
 public class CadastroDao {
+
 	private EntityManager var;
 
-	public CadastroDao(EntityManager value){
-		this.var = value;
+	public CadastroDao(){
+
 	}
 
-	public void CadastrarCliente(Cadastro value){
-		this.var.persist(value);
+	public CadastroDao(EntityManager entityManager) {
+		this.var = entityManager;
 	}
+
+	public void cadastrar(Cadastro cadastro) {
+		this.var.persist(cadastro);
+	}
+
 }
